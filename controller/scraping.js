@@ -14,7 +14,7 @@ module.exports.scrap = async (req, res)=> {
 // function to verify the url
 function verifyURL(url, res) {
     if(!url.startsWith(process.env.URL_GENERATION)){
-        sendResponse(res, "the url isnt from the" + process.env.URL_GENERATION, true);
+        sendResponse(res, "the url isnt from the site", true);
         return false;
     } else {
         return true;
