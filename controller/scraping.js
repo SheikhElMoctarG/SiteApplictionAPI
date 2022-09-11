@@ -32,7 +32,7 @@ async function getData(url, title, res){
     try {
         request(url, function(error, response, body){
             const $ = cheerio.load(body);
-            const htmlPage = $("div."+ process.env.POST_BODY);
+            const htmlPage = $("div."+ process.env.POST_BODY).html();
             res.send({
                 title: title, 
                 html: htmlPage,
