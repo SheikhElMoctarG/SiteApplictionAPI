@@ -8,7 +8,7 @@ const me = require("../controller/articles");
 module.exports.getArticles = async()=> {
     const articles = [];
     const feed = await parser.parseURL(process.env.URL_FEED_RSS);
-    await feed.items.forEach(async item => {
+    feed.items.forEach(async item => {
         await getInformation(item);
         await me.wait(10).then(async ()=> {
             articles.push({

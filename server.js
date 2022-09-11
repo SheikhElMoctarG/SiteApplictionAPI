@@ -8,9 +8,13 @@ const scraper = require("./controller/scraping");
 app.use(cors());
 var articles = {message: "waiting a lot.."};// varaible for articles
 (async ()=> {
-    articles = await controller_articles.getArticles();
+    await controller_articles.getArticles().then((data) => {
+        articles = data; 
+    }).catch((error)=> {console.log(error)});
     setInterval(async() => {
-        articles = await controller_articles.getArticles();
+        await controller_articles.getArticles().then((data) => {
+            articles = data; 
+        }).catch((error)=> {console.log(error)});
     }, 60000 * process.env.MINS);
 })();
 // to get the posts
