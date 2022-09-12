@@ -5,6 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const controller_articles = require("./controller/articles");
 const scraper = require("./controller/scraping");
+const restart = require("./restart/index");
 app.use(cors());
 app.use(Express.json());
 var articles = {message: "waiting a lot.."};// varaible for articles
@@ -33,5 +34,8 @@ app.post("/post", async (req, res)=> {
         scraper.scrap(req, res);
     }
 });
+
+// method for restart server
+//restart.restart();
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=> console.log("listening the server in port is "+ PORT + " .."));
