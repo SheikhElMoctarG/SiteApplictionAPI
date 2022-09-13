@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 const controller_articles = require("./controller/articles");
 const scraper = require("./controller/scraping");
-const restart = require("./restart/index");
+//const restart = require("./restart/index");
 app.use(cors());
 app.use(Express.json());
 var articles = {message: "waiting a lot.."};// varaible for articles
