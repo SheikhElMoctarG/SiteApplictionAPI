@@ -3,12 +3,14 @@ require("dotenv").config();
 const request = require("request");
 
 module.exports.scrap = async (req, res)=> {
-    if(req.body.authentication != process.env.AUTH){
+    const authentication = req.get("authentication");
+    const url = req.get("url");
+    if(authentication != process.env.AUTH){
         sendResponse(res, "the error in the authentication, you can't get data because you dont have the right authentication.", true);
     } else {
-        const urlIsTrue = verifyURL(req.body.url, res);
+        const urlIsTrue = verifyURL(url, res);
         if (urlIsTrue)
-            getData(req.body.url, req.body.title, res);
+            getData(url, req.get("title"), res);
     }
 };
 // function to verify the url
