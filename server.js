@@ -24,7 +24,7 @@ app.get("/", async (req, res)=> {
     res.send(articles); 
 });
 // to get the text and code html in the post
-app.get("/post", async (req, res)=> {
+app.post("/post", async (req, res)=> {
     if (req.get("url") === undefined || req.get("title") === undefined || req.get("authentication") === undefined) {
         res.send({
             message: "the url and the authentication, title are required.",
