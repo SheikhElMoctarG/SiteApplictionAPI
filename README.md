@@ -1,6 +1,9 @@
 ## What is this Project?
 it is project for get the rss from website and scraping the image and descrption from the site.
 
+### Algorithm: 
+![Algorithms with BPMN](/assets/img/MarineGEO_logo.png "MarineGEO logo")
+
 The project by [Sheikh El-Moctar](https://www.facebook.com/SheikhElMoctar/)
 
 ## Get Started
