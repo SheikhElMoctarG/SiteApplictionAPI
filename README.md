@@ -1,3 +1,4 @@
+## Part of [applicationSite_ANDROID](https://github.com/SheikhElMoctarG/applicationSite_ANDROID):
 ## What is this Project?
 it is project for get the rss from website and scraping the image and descrption from the site.
 
